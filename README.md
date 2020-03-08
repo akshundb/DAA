@@ -1,2 +1,2 @@
 # DAA
-DAA course program (C++)
+DAA course programs (C++)
