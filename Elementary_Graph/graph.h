@@ -1,10 +1,16 @@
 #include<iostream>
 using namespace std;
 
-void DFS(Graph, int s, int t);
-void BFS(Graph, int s, int t);
+void DFS(Graph G, int s, int t);
+void DFS(Graph G, int s);
+void DFS(Graph G);
+
+void BFS(Graph G, int s, int t);
+void BFS(Graph G, int s);
+void BFS(Graph G);
 
 void BFS_SPATH(Graph G, int s, int flag);
+
 void LPATH(Graph G, int flag);
 
 void MAX_Weight_MST(Graph G);
