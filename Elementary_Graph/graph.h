@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 
-
 struct node
 {
 	int data;
@@ -76,11 +75,11 @@ class Graph
 
 void DFS(Graph G, int s, int t);
 void DFS(Graph G, int s);
-void DFS(Graph G);
+bool DFS(Graph G);
 
 void BFS(Graph G, int s, int t);
 void BFS(Graph G, int s);
-void BFS(Graph G);
+bool BFS(Graph G);
 
 void BFS_SPATH(Graph G, int s, int flag);
 

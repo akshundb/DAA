@@ -37,7 +37,7 @@ int empty()
     return 0;
 }
 
-void BFS(Graph G, int s, int t)
+bool BFS(Graph G, int s, int t)
 {
     bool visit[G.n];
     for(int i = 0; i < G.n; i++)
@@ -47,19 +47,20 @@ void BFS(Graph G, int s, int t)
     while(!empty())
     {
         int x = dequeue();
-        cout<<x<<" ";
         struct node* temp = G.N[x];
         int i;
         while(temp)
-        { 
+        {
             i = temp->data;
             if(!visit[i])
             {
                 if(t == i)
-                     return 1;         
+                     return 1;
                 visit[i] = true;
                 enqueue(i);
                 temp = temp->next;
             }
         }
     }
+    return 0;
+}
