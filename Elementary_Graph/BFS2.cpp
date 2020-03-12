@@ -36,7 +36,7 @@ int empty(){
 
 void BFS(Graph G, int s){
     bool visit[G.n];
-    for(int i = 0; i < n; i++)
+    for(int i = 0; i < G.n; i++)
         visit[i] = false;
     visit[s] = true;
     enqueue(s);
