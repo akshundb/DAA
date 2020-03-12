@@ -30,7 +30,7 @@ int empty(){
     return 0;
 }
 
-void BFS(graph G, int s){
+void BFS(Graph G, int s){
     bool visit[n];
     for(int i = 0; i < n; i++)
         visit[i] = false;
