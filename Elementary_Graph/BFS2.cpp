@@ -32,15 +32,16 @@ int empty(){
     return 0;
 }
 
-void BFS(graph G, int s){
+void BFS(Graph G, int s){
     bool visit[n];
     for(int i = 0; i < n; i++)
         visit[i] = false;
     visit[s] = true;
     enqueue(s);
     while(!empty()){
-        cout<<pop()<<" ";
-        struct node* temp = N[s];
+        int x = pop();
+        cout<<x<<" ";
+        struct node* temp = N[x];
         int i;
         while(temp){
             i = temp->data;
