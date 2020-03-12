@@ -53,7 +53,7 @@ void BFS(Graph G)
             i = temp->data;
             if(!visit[i]){
                 visit[i] = true;
-                push(i);
+                enqueue(i);
                 temp = temp->next;
             }
         }
