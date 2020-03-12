@@ -16,14 +16,16 @@ void enqueue(int x){
 	else{
 		rear->next = temp;
 		rear = temp;
-		temp->next = head;
+		temp->next = NULL;
 	}
 }
 
-void dequeue(){
+int dequeue(){
+    int x = front->data;
 	front = front->next;
 	head = head->next;
-	rear->next = head;
+	rear->next = NULL;
+	return x;
 }
 
 int empty(){
@@ -33,7 +35,7 @@ int empty(){
 }
 
 void BFS(Graph G, int s){
-    bool visit[n];
+    bool visit[G.n];
     for(int i = 0; i < n; i++)
         visit[i] = false;
     visit[s] = true;
@@ -41,7 +43,7 @@ void BFS(Graph G, int s){
     while(!empty()){
         int x = dequeue();
         cout<<x<<" ";
-        struct node* temp = N[x];
+        struct node* temp = G.N[x];
         int i;
         while(temp){
             i = temp->data;
