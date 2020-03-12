@@ -1,5 +1,7 @@
 #include "graph.h"
 
+struct node* front;
+struct node* rear;
 struct node* head = front = rear = NULL;
 
 void enqueue(int x){
