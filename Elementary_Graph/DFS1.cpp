@@ -1,16 +1,27 @@
-#include"graph.h"
+#include "graph.h"
+#include <iostream>
 
-void DFS(Graph G);
+using namespace std;
+
+bool visited[1000];
+
+void DFS(struct Graph G,int s)
 {
-struct node* temp;
-temp=N[0];
+	s=0;
+	struct node *temp = G.N[s];
 
-while(temp!=NULL && visited(temp->data)==false)
-{
-cout<<temp->data<<endl;
+	visited[s] = true;
+
+	cout << "Visited " << s << "\n";
+
+	while(temp!=NULL)
+	{
+		int connectedvertex = temp->data;
+		
+		if(visited[connectedvertex] == 0)
+		{
+			DFS(G,connectedvertex);
+		}
+	temp = temp->next;
+	}
 }
-TUM SAB MADARCHOD HO!!!!
-}
-
-
-
