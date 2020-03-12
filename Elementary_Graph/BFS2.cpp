@@ -39,7 +39,7 @@ void BFS(Graph G, int s){
     visit[s] = true;
     enqueue(s);
     while(!empty()){
-        int x = pop();
+        int x = dequeue();
         cout<<x<<" ";
         struct node* temp = N[x];
         int i;
@@ -47,7 +47,7 @@ void BFS(Graph G, int s){
             i = temp->data;
             if(!visit[i]){
                 visit[i] = true;
-                push(i);
+                enqueue(i);
                 temp = temp->next;
             }
         }
