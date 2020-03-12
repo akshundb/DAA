@@ -1,5 +1,7 @@
 #include "graph.h"
 
+struct node* front;
+struct node* rear;
 struct node* head = front = rear = NULL;
 
 void enqueue(int x)
@@ -51,7 +53,7 @@ void BFS(Graph G)
             i = temp->data;
             if(!visit[i]){
                 visit[i] = true;
-                push(i);
+                enqueue(i);
                 temp = temp->next;
             }
         }
