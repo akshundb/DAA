@@ -56,7 +56,7 @@ void BFS(Graph G, int s, int t)
             if(!visit[i])
             {
                 if(t == i)
-                     return 1;         
+                     cout<<1;         
                 visit[i] = true;
                 enqueue(i);
                 temp = temp->next;
