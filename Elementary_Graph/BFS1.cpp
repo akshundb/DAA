@@ -2,7 +2,8 @@
 
 struct node* head = front = rear = NULL;
 
-void enqueue(int x){
+void enqueue(int x)
+{
 	struct node* temp = (struct node*) malloc (sizeof(struct node));
 	temp->data = x;
 	if(head == NULL){
@@ -14,14 +15,17 @@ void enqueue(int x){
 	else{
 		rear->next = temp;
 		rear = temp;
-		temp->next = head;
+		temp->next = NULL;
 	}
 }
 
-void dequeue(){
+int dequeue()
+{
+    int x=front->data;
 	front = front->next;
 	head = head->next;
-	rear->next = head;
+	rear->next = NULL;
+    return x;
 }
 
 int empty(){
@@ -29,3 +33,28 @@ int empty(){
         return 1;
     return 0;
 }
+
+
+void BFS(Graph G)
+{
+    bool visit[G.n];
+    for(int i = 0; i < G.n; i++)
+        visit[i] = false;
+    visit[0] = true;
+    enqueue(0);
+    while(!empty()){
+        int x = dequeue();
+        cout<<x<<" ";
+        struct node* temp = G.N[x];
+        int i;
+        while(temp){
+            i = temp->data;
+            if(!visit[i]){
+                visit[i] = true;
+                push(i);
+                temp = temp->next;
+            }
+        }
+    }
+}
+
