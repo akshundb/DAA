@@ -15,15 +15,17 @@ void enqueue(int x)
 	else{
 		rear->next = temp;
 		rear = temp;
-		temp->next = head;
+		temp->next = NULL;
 	}
 }
 
-void dequeue()
+int dequeue()
 {
+    int x=front->data;
 	front = front->next;
 	head = head->next;
-	rear->next = head;
+	rear->next = NULL;
+    return x;
 }
 
 int empty(){
@@ -35,15 +37,15 @@ int empty(){
 
 void BFS(Graph G)
 {
-    bool visit[n];
-    for(int i = 0; i < n; i++)
+    bool visit[G.n];
+    for(int i = 0; i < G.n; i++)
         visit[i] = false;
     visit[0] = true;
     enqueue(0);
     while(!empty()){
         int x = dequeue();
         cout<<x<<" ";
-        struct node* temp = N[x];
+        struct node* temp = G.N[x];
         int i;
         while(temp){
             i = temp->data;
