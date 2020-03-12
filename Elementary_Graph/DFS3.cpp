@@ -7,7 +7,7 @@ using namespace std;
 
 bool visited[MAX];
 
-int DFS(struct Graph G, int s, int t)
+bool DFS(struct Graph G, int s, int t)
 {
 
         struct node *temp = G.N[s];
