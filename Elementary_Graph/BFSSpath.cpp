@@ -1,14 +1,17 @@
-#include"graph.h"
 #include<cstdlib>
+#include<vector>
+#include"graph.h"
 
-void BFS(Graph G, int s)
+vector<int> BFS_SPATH(Graph G, int s, bool flag)
 {
   bool visit[G.n];
+  vector<int> d;
   queue Q;
 
   for(int i = 0; i<G.n; i++)
   {
         visit[i] = false;
+        d.push_back(0);
   }
 
   visit[s] = true;
@@ -31,7 +34,7 @@ void BFS(Graph G, int s)
           if(visit[u] == 0)
           {
               visit[u] = 1;
-              cout<<u<<endl;
+              d[u] = d[x]+1;
 
               Q.enqueue(u);
 
@@ -39,6 +42,7 @@ void BFS(Graph G, int s)
           }
           else
           {
+
             temp = temp->next;
           }
       }

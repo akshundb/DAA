@@ -12,6 +12,7 @@ struct node
 struct node* insert(int data,  struct node *head, int w)
 {
 	struct node *insert=(struct node*)malloc(sizeof(struct node));
+	insert->next = NULL;
 	insert->data = data;
 	insert->weight = w;
 	 if(head!=NULL)
@@ -39,6 +40,75 @@ void printList(struct node *head)
 		temp = temp->next;
 	}
 }
+
+class queue
+{
+
+  struct node *front;
+  struct node *rear;
+
+  public:
+
+  queue()
+  {
+    front = rear = NULL;
+  }
+
+  void enqueue(int x)
+  {
+  	struct node* temp = (struct node*) malloc (sizeof(struct node));
+  	temp->data = x;
+    temp->next = NULL;
+
+    if(rear == NULL)
+  	{
+  		front = temp;
+  	  rear = temp;
+      return;
+  	}
+  	else
+  	{
+  	  rear->next = temp;
+  		rear = temp;
+  	}
+  }
+
+  int dequeue()
+  {
+    if(front==NULL)
+    {
+      return -420;
+    }
+
+    int x = front->data;
+    front = front->next;
+
+    if(front == NULL)
+      rear = NULL;
+
+    return x;
+  }
+
+  void printQ()
+  {
+  	struct node *temp = front;
+
+  	while(temp!=rear)
+  	{
+  		cout << temp->data << "  ";
+  		temp = temp->next;
+  	}
+  }
+
+  bool isEmpty()
+  {
+    if(front==NULL)
+    {
+      return 1;
+    }
+    return 0;
+  }
+};
 
 class Graph
 {
@@ -73,6 +143,8 @@ class Graph
 };
 
 
+
+
 void DFS(Graph G, int s, int t);
 void DFS(Graph G, int s);
 bool DFS(Graph G);
@@ -81,7 +153,7 @@ void BFS(Graph G, int s, int t);
 void BFS(Graph G, int s);
 bool BFS(Graph G);
 
-void BFS_SPATH(Graph G, int s, int flag);
+vector<int> BFS_SPATH(Graph G, int s, int flag);
 
 void LPATH(Graph G, int flag);
 
