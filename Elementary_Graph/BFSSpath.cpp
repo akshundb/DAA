@@ -4,6 +4,7 @@
 
 vector<int> BFS_SPATH(Graph G, int s, bool flag)
 {
+  if(flag == 1)
   bool visit[G.n];
   vector<int> d;
   queue Q;
@@ -31,10 +32,15 @@ vector<int> BFS_SPATH(Graph G, int s, bool flag)
       while(temp!=NULL)
       {
           u = temp->data;
+          w = temp->weight;
           if(visit[u] == 0)
           {
               visit[u] = 1;
-              d[u] = d[x]+1;
+
+              if(flag==0)
+                d[u] = d[x]+1;
+              else
+                d[u] = d[x]+w;
 
               Q.enqueue(u);
 
