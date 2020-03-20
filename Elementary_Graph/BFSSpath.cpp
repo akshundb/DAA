@@ -39,8 +39,6 @@ vector<int> BFS_SPATH(Graph G, int s, bool flag)
 
               if(flag==0)
                 d[u] = d[x]+1;
-              else
-                d[u] = d[x]+w;
 
               Q.enqueue(u);
 
