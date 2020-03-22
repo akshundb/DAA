@@ -1,13 +1,16 @@
 #include<cstdlib>
 #include<vector>
 #include"graph.h"
+#include<queue>
 
-vector<int> BFS_SPATH(Graph G, int s, bool flag)
+using namespace std;
+
+list<int> BFS_SPATH(Graph G, int s, bool flag)
 {
-  if(flag == 1)
   bool visit[G.n];
-  vector<int> d;
-  queue Q;
+  list<int> d;
+  queue<int> Q;
+  int w;
 
   for(int i = 0; i<G.n; i++)
   {
@@ -17,16 +20,17 @@ vector<int> BFS_SPATH(Graph G, int s, bool flag)
 
   visit[s] = true;
 
-  Q.enqueue(s);
+  Q.push(s);
 
   struct node* temp;
+
   int x;
   int u;
 
-  while(Q.isEmpty() == 0)
+  while(Q.empty() == 0)
   {
-      x = Q.dequeue();
-
+      x = Q.front();
+      Q.pop();
       temp = G.N[x];
 
       while(temp!=NULL)
@@ -35,12 +39,10 @@ vector<int> BFS_SPATH(Graph G, int s, bool flag)
           w = temp->weight;
           if(visit[u] == 0)
           {
-              visit[u] = 1;
+              visit[u] = true;
+              d[u] = d[x]+1;
 
-              if(flag==0)
-                d[u] = d[x]+1;
-
-              Q.enqueue(u);
+              Q.push(u);
 
               temp = temp->next;
           }
