@@ -55,7 +55,7 @@ void BFS(Graph G, int s, int t);
 void BFS(Graph G, int s);
 bool BFS(Graph G);
 
-list<int> BFS_SPATH(Graph G, int s, bool flag);
+vector<int> BFS_SPATH(Graph G, int s, bool flag);
 
 void LPATH(Graph G, int flag);
 
@@ -65,7 +65,7 @@ void TEST_bipartite(Graph G);
 void Test_articulationpoints(Graph G);
 void Test_bridges(Graph G);
 
-void MST_Prim(Graph G);
+Graph MST_Prim(Graph G);
 Graph MST_Kruskal(Graph G);
 void MST_youralgo(Graph G);
 

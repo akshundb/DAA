@@ -5,10 +5,10 @@
 
 using namespace std;
 
-list<int> BFS_SPATH(Graph G, int s, bool flag)
+vector<int> BFS_SPATH(Graph G, int s, bool flag)
 {
   bool visit[G.n];
-  list<int> d;
+  vector<int> d;
   queue<int> Q;
   int w;
 
@@ -43,12 +43,10 @@ list<int> BFS_SPATH(Graph G, int s, bool flag)
               d[u] = d[x]+1;
 
               Q.push(u);
-
               temp = temp->next;
           }
           else
           {
-
             temp = temp->next;
           }
       }
