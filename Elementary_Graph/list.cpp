@@ -17,18 +17,18 @@ struct node* myinsert(int data,  struct node *head, int w)
 	myinsert->next = NULL;
 	myinsert->data = data;
 	myinsert->weight = w;
-	 if(head!=NULL)
-	 {
-	 	myinsert->next = head->next;
-	 	head->next = myinsert;
-	 }
-	 else
-	 {
-	 	myinsert->next = NULL;
+	if(head!=NULL)
+	{
+		myinsert->next = head->next;
+		head->next = myinsert;
+	}
+	else
+	{
+		myinsert->next = NULL;
 	 	return myinsert;
-	 }
+	}
 
-	 return head;
+	return head;
 
 }
 
