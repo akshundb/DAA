@@ -12,7 +12,7 @@ struct node
 	struct node *next;
 };
 
-struct node* myinsert(int data,  struct node *head, int w);
+struct node* myinsert(int data, struct node *head, int w);
 void printList(struct node *head);
 
 class Graph
