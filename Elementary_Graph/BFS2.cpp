@@ -1,4 +1,5 @@
 #include"graph.h"
+#include<queue>
 #include<cstdlib>
 
 void BFS(Graph G, int s){

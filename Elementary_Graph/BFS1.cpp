@@ -1,62 +1,34 @@
-#include "graph.h"
+#include"graph.h"
+#include<queue>
+#include<cstdlib>
 
-struct node* front;
-struct node* rear;
-struct node* head = front = rear = NULL;
-
-void enqueue(int x)
-{
-	struct node* temp = (struct node*) malloc (sizeof(struct node));
-	temp->data = x;
-	if(head == NULL){
-		front = temp;
-		rear = temp;
-		temp->next = temp;
-		head = temp;
+void BFS(Graph G, int s){
+	bool visit[G.n];
+	queue Q;
+	
+	for(int i = 0; i<G.n; i++){    
+		visit[i] = false;
 	}
-	else{
-		rear->next = temp;
-		rear = temp;
-		temp->next = NULL;
+
+	visit[0] = true;
+	Q.enqueue(0);
+	struct node* temp;
+	int x;
+	int u;
+	while(Q.isEmpty() == 0){
+		x = Q.dequeue();
+		temp = G.N[x];
+		while(temp!=NULL){
+			u = temp->data;
+			if(visit[u] == 0){
+				visit[u] = 1;
+				cout<<u<<endl;
+				Q.enqueue(u);
+				temp = temp->next;
+			}
+			else
+				temp = temp->next;
+		}
 	}
+	return d;
 }
-
-int dequeue()
-{
-    int x=front->data;
-	front = front->next;
-	head = head->next;
-	rear->next = NULL;
-    return x;
-}
-
-int empty(){
-    if(front == rear)
-        return 1;
-    return 0;
-}
-
-
-void BFS(Graph G)
-{
-    bool visit[G.n];
-    for(int i = 0; i < G.n; i++)
-        visit[i] = false;
-    visit[0] = true;
-    enqueue(0);
-    while(!empty()){
-        int x = dequeue();
-        cout<<x<<" ";
-        struct node* temp = G.N[x];
-        int i;
-        while(temp){
-            i = temp->data;
-            if(!visit[i]){
-                visit[i] = true;
-                enqueue(i);
-                temp = temp->next;
-            }
-        }
-    }
-}
-
