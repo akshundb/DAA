@@ -19,7 +19,7 @@ void BFS(Graph G, int s){
 	int u;
 	while(Q.empty() == 0){
 		x = Q.front();
-		u = Q.pop()
+		Q.pop();
 		temp = G.N[x];
 		while(temp!=NULL){
 			u = temp->data;
