@@ -2,35 +2,27 @@
 #include <list>
 #include <iostream>
 using namespace std;
-
-
 #define NIL -1 
 
 
-void APUtil(int u, bool visited[], int disc[],int low[], int parent[], bool ap[],Graph G) 
+void APTransverse(int u, bool visited[], int disc[],int low[], int parent[], bool ap[],Graph G) 
 { 
-    // A static variable is used for simplicity, we can avoid use of static 
-    // variable by passing a pointer. 
+    
     static int time = 0; 
   
-    // Count of children in DFS Tree 
+    // Count of children
     int children = 0; 
-  
-    // Mark the current node as visited 
+
     visited[u] = true; 
-  
     // Initialize discovery time and low value 
     disc[u] = low[u] = ++time; 
   
-    // Go through all vertices aadjacent to this 
-    //list<int>::iterator i; 
     struct node *temp = (struct node*)malloc(sizeof(G.N[u]));
 	temp = G.N[u];
 
-    //for (i = N[u].begin(); i != N[u].end(); ++i) 
     while(temp!=NULL)
     { 
-        int v = temp->data;  // v is current adjacent of u 
+        int v = temp->data;  // v 
   
         // If v is not visited yet, then make it a child of u 
         // in DFS tree and recur for it 
@@ -38,7 +30,7 @@ void APUtil(int u, bool visited[], int disc[],int low[], int parent[], bool ap[]
         { 
             children++; 
             parent[v] = u; 
-            APUtil(v, visited, disc, low, parent, ap,G); 
+            APTransverse(v, visited, disc, low, parent, ap,G); 
   
             // Check if the subtree rooted with v has a connection to 
             // one of the ancestors of u 
@@ -46,12 +38,12 @@ void APUtil(int u, bool visited[], int disc[],int low[], int parent[], bool ap[]
   
             // u is an articulation point in following cases 
   
-            // (1) u is root of DFS tree and has two or more chilren. 
+            //1)u is root of DFS tree and has two or more chilren. 
             if (parent[u] == NIL && children > 1) 
                ap[u] = true; 
   
-            // (2) If u is not root and low value of one of its child is more 
-            // than discovery value of u. 
+            //2)If u is not root and low value of one of its child is more than discovery value of u
+            //(meaning the child cant reach a earlier discovered node,hence it has no backedge)
             if (parent[u] != NIL && low[v] >= disc[u]) 
                ap[u] = true; 
         } 
@@ -85,8 +77,10 @@ void Test_articulationpoints(Graph G)
     // in DFS tree rooted with vertex 'i' 
     for (int i = 0; i < G.n; i++) 
         if (visited[i] == false) 
-            APUtil(i, visited, disc, low, parent, ap,G); 
+            APTransverse(i, visited, disc, low, parent, ap,G); 
   
+    
+    cout<<"Articulation Points:-"<<endl;
     // Now ap[] contains articulation points, print them 
     for (int i = 0; i < G.n; i++) 
         if (ap[i] == true) 

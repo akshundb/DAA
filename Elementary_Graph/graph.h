@@ -14,6 +14,7 @@ struct node
 
 struct node* myinsert(int data, struct node *head, int w);
 void printList(struct node *head);
+void myDelete(int data,struct node *head);
 
 class Graph
 {
@@ -33,6 +34,11 @@ class Graph
 	void insertEdge(int n1, int n2, int w)
 	{
 		N[n1] = myinsert(n2, N[n1], w);
+	}
+
+	void deleteEdge(int n1,int n2)
+	{
+		myDelete(n2,N[n1]);
 	}
 
 	void print()
