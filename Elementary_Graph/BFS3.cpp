@@ -4,10 +4,6 @@
 
 using namespace std;
 
-struct node* front;
-struct node* rear;
-struct node* head = front = rear = NULL;
-
 
 bool BFS(Graph G, int s, int t)
 {
