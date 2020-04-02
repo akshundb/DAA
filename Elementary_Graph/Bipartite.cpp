@@ -1,5 +1,8 @@
 #include"graph.h"
 #include<queue>
+#include<cstdlib>
+
+using namespace std;
 
 bool bipartite(Graph G, int s){
     int color[G.n];
