@@ -1,52 +1,27 @@
 #include "graph.h"
+#include<cstdlib>
+#include<queue>
+
+using namespace std;
 
 struct node* front;
 struct node* rear;
 struct node* head = front = rear = NULL;
 
-void enqueue(int x)
-{
-	struct node* temp = (struct node*) malloc (sizeof(struct node));
-	temp->data = x;
-	if(head == NULL){
-		front = temp;
-		rear = temp;
-		temp->next = temp;
-		head = temp;
-	}
-	else{
-		rear->next = temp;
-		rear = temp;
-		temp->next = NULL;
-	}
-}
-
-int dequeue()
-{
-    int x = front->data;
-	front = front->next;
-	head = head->next;
-	rear->next = NULL;
-	return x;
-}
-
-int empty()
-{
-    if(front == rear)
-        return 1;
-    return 0;
-}
 
 bool BFS(Graph G, int s, int t)
 {
+    queue<int> Q;
     bool visit[G.n];
     for(int i = 0; i < G.n; i++)
         visit[i] = false;
     visit[s] = true;
-    enqueue(s);
-    while(!empty())
+    Q.push(s);
+    while(!Q.empty())
     {
-        int x = dequeue();
+
+        int x = Q.front();
+        Q.pop();
         struct node* temp = G.N[x];
         int i;
         while(temp)
@@ -55,12 +30,12 @@ bool BFS(Graph G, int s, int t)
             if(!visit[i])
             {
                 if(t == i)
-                     return 1;
+                     return true;
                 visit[i] = true;
-                enqueue(i);
+                Q.push(i);
                 temp = temp->next;
             }
         }
     }
-    return 0;
+    return false;
 }
