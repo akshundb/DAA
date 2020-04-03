@@ -32,7 +32,7 @@ void Test_bridges(Graph G)
     cout<<"Bridges are:-"<<endl;
     for(int i=0;i<u.size();i++)
     {
-        cout<<"Edge"<<u[i]<<"-->"<<"v[i]"<<endl;
+        cout<<"Edge"<<u[i]<<"-->"<<v[i]<<endl;
     }
     cout<<endl<<endl;
 }
