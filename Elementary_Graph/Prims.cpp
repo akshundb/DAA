@@ -6,8 +6,16 @@ using namespace std;
 
 typedef pair<int, int> iPair; 
 
-void primMST(Graph G) 
+Graph MST_Prim(Graph G) 
 { 
+    Graph K;
+
+    K.n=G.n;
+
+    for(int i=0; i<G.n; i++)
+  	{                          
+  		K.N[i] = NULL;      
+  	} 
 
     // Create a priority queue to store vertices 
     priority_queue<iPair, vector <iPair> , greater<iPair> > pq; 
@@ -50,7 +58,15 @@ void primMST(Graph G)
         } 
     } 
   
+
+     
+
+
     // Print edges of MST using parent array 
     for (int i = 1; i < G.n; ++i) 
-        printf("%d - %d\n", parent[i], i); 
+    {
+        K.insertEdge(parent[i],i,key[i]);
+    }
+
+    return K;
 } 
