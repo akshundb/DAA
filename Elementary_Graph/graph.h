@@ -38,7 +38,7 @@ class Graph
 
 	void deleteEdge(int n1,int n2)
 	{
-		myDelete(n2,N[n1]);
+		N[n1] = myDelete(n2,N[n1]);
 	}
 
 	void print()

@@ -32,21 +32,22 @@ struct node* myinsert(int data,  struct node *head, int w)
 
 }
 
-void myDelete(int data,struct node *head)
-{
-	struct node *temp=head;
-	struct node *prev=(struct node*)malloc(sizeof(struct node));
-
-	while(temp!=NULL)
-	{
-		if(temp->data=data)
-		{
-			prev->next=temp->next;
-			temp->next=NULL;
+struct node* myDelete(int data, struct node* head){
+	struct node* temp = head;
+	struct node* prev;
+	if(head->data == data)
+		head = head->next;
+	else{
+		while(temp){
+			if(temp->data == data){
+				prev->next = temp->next;
+				break;
+			}
+			prev = temp;
+			temp = temp->next;
 		}
-		prev=temp;
-		temp=temp->next;
 	}
+	return head;
 }
 
 void printList(struct node *head)
