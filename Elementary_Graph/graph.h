@@ -57,9 +57,9 @@ void DFS(Graph G, int s, int t);
 list<int> DFS(Graph G, int s);
 list<int> DFS(Graph G);
 
-void BFS(Graph G, int s, int t);
+bool BFS(Graph G, int s, int t);
 void BFS(Graph G, int s);
-bool BFS(Graph G);
+void BFS(Graph G);
 
 vector<int> BFS_SPATH(Graph G, int s, bool flag);
 
