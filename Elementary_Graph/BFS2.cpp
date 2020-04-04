@@ -4,8 +4,11 @@
 
 using namespace std;
 
-void BFS(Graph G, int s)
+
+
+list<int> BFS(Graph G, int s)
 {
+	list<int> D;
 	bool visit[G.n];
 	queue<int> Q;
 	
@@ -26,7 +29,7 @@ void BFS(Graph G, int s)
 			u = temp->data;
 			if(visit[u] == 0){
 				visit[u] = 1;
-				cout<<u<<endl;
+				D.push_back(u);
 				Q.push(u);
 				temp = temp->next;
 			}
@@ -34,4 +37,5 @@ void BFS(Graph G, int s)
 				temp = temp->next;
 		}
 	}
+	return D;
 }

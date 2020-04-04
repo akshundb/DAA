@@ -58,8 +58,8 @@ list<int> DFS(Graph G, int s);
 list<int> DFS(Graph G);
 
 bool BFS(Graph G, int s, int t);
-void BFS(Graph G, int s);
-void BFS(Graph G);
+list<int> BFS(Graph G, int s);
+list<int> BFS(Graph G);
 
 vector<int> BFS_SPATH(Graph G, int s, bool flag);
 
