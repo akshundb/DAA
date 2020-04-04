@@ -38,7 +38,7 @@ class Graph
 
 	void deleteEdge(int n1,int n2)
 	{
-		N[n1] = myDelete(n2,N[n1]);
+		myDelete(n2,N[n1]);
 	}
 
 	void print()
@@ -73,7 +73,7 @@ void Test_bridges(Graph G);
 
 Graph MST_Prim(Graph G);
 Graph MST_Kruskal(Graph G);
-void MST_youralgo(Graph G);
+Graph MST_youralgo(Graph G);
 
 void clearGlobalList();
 void clearGlobalVisit(int n);

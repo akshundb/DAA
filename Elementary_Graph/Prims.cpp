@@ -57,10 +57,6 @@ Graph MST_Prim(Graph G)
             } 
         } 
     } 
-  
-
-     
-
 
     // Print edges of MST using parent array 
     for (int i = 1; i < G.n; ++i) 
