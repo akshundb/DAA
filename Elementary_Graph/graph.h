@@ -53,7 +53,7 @@ class Graph
 
 };
 
-void DFS(Graph G, int s, int t);
+bool DFS(Graph G, int s, int t);
 list<int> DFS(Graph G, int s);
 list<int> DFS(Graph G);
 
@@ -77,3 +77,4 @@ Graph MST_youralgo(Graph G);
 
 void clearGlobalList();
 void clearGlobalVisit(int n);
+void clearReach();

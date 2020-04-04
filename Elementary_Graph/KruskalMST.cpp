@@ -11,7 +11,7 @@ Graph MST_Kruskal(Graph G)       // Returns MST as an object of Class Graph
   	K.n = G.n;
                             //_
   	for(int i=0; i<G.n; i++)// |
-  	{                       // |    Intialisation for Graph K (Soon Will be replaced by constructor)
+  	{                       // |    
   		K.N[i] = NULL;      // |
   	}                       //_|
 

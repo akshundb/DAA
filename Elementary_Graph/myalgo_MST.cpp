@@ -23,7 +23,7 @@ Graph MST_youralgo(Graph G)
   	K.n = G.n;
                             //_
   	for(int i=0; i<G.n; i++)// |
-  	{                       // |    Intialisation for Graph K (Soon Will be replaced by constructor)
+  	{                       // |    
   		K.N[i] = NULL;      // |
   	}                       //_|
 

@@ -14,8 +14,8 @@ int main()
     cin>>G1.n;
     do
     {
-        cout<<"1.Add Edge"<<endl<<"2.Remove Edge"<<endl<<"3."
-    }while (/* condition */);
+        cout<<"1.Add Edge"<<endl<<"2.Remove Edge"<<endl<<"3."<<endl;
+    }while(choice!=9);
     
     
 
