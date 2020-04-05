@@ -59,8 +59,8 @@ class Graph
 			while(temp){
 				if(temp->data == n2){
 					prev->next = temp->next;
-				break;
-			}
+					break;
+				}
 				prev = temp;
 				temp = temp->next;
 			}
