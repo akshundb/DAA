@@ -4,14 +4,14 @@
 
 using namespace std;
 
-bool TEST_bipartite(Graph G, int s){
+bool TEST_bipartite(Graph G){
     int color[G.n];
     for (int i = 0; i < G.n; ++i)
         color[i] = -1;
     
-    color[s] = 1;
+    color[0] = 1;
     queue <int> q;
-    q.push(s);
+    q.push(0);
     
     while (!q.empty()){
         int u = q.front();
