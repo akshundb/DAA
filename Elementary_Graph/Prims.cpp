@@ -139,7 +139,7 @@ bool isInMinHeap(struct MinHeap* minHeap, int v)
 
 // The main function that constructs Minimum Spanning Tree (MST)
 // using Prim's algorithm
-Graph PrimMST(Graph G)
+Graph MST_Prim(Graph G)
 {
     int V = G.n; // Get the number of vertices in graph
     int parent[G.n]; // Array to store constructed MST

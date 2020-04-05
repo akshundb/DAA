@@ -2,11 +2,7 @@
 #include<list>
 #include<iostream>
 
-#define MAX 10000
-
 using namespace std;
-
-bool visited[MAX];
 
 bool reach=false;
 

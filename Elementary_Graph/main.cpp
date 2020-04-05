@@ -148,7 +148,7 @@ int main()
                 cin>>choice;
                 switch (choice)
                 {
-                    //SPATH AND LPATH NEED TO BE FIXED
+                    
                 }
             break;
 

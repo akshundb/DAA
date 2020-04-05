@@ -1,6 +1,6 @@
 #include"graph.h"
 
-void Bridge(Graph G){
+void Test_bridges(Graph G){
 	int count = 0;
 	for(int i = 0; i < G.n; i++){
 		struct node* temp = G.N[i];

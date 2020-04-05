@@ -28,7 +28,7 @@ list<int> BFS(Graph G)
 			u = temp->data;
 			if(visit[u] == 0){
 				visit[u] = 1;
-				D.push_back;
+				D.push_back(u);
 				Q.push(u);
 				temp = temp->next;
 			}

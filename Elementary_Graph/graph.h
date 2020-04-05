@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<list>
+#include<set>
 using namespace std;
 
 struct node
@@ -109,3 +110,5 @@ Graph MST_youralgo(Graph G);
 void clearGlobalList();
 void clearGlobalVisit(int n);
 void clearReach();
+
+set<int> findSet(Graph G,int u);

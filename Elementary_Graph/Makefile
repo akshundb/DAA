@@ -1,7 +1,7 @@
 all: graph
 
-graph: main.o DFS1.o DFS2.o DFS3.o BFS1.o BFS2.o BFS3.o Spath.o Lpath.o Max_MST.o Bipartite.o Test_ArtiPoint.o Bridges.o Prims.o MST_Kruskal.o myalgo_MST.o
-	g++ main.o DFS1.o DFS2.o DFS3.o BFS1.o BFS2.o BFS3.o Spath.o Lpath.o Max_MST.o Bipartite.o Test_ArtiPoint.o Bridges.o Prims.o MST_Kruskal.o myalgo_MST.o -o graph
+graph: main.o DFS1.o DFS2.o DFS3.o BFS1.o BFS2.o BFS3.o Spath.o Lpath.o Max_MST.o Bipartite.o Test_ArtiPoint.o Bridges.o Prims.o KruskalMST.o myalgo_MST.o
+	g++ main.o DFS1.o DFS2.o DFS3.o BFS1.o BFS2.o BFS3.o Spath.o Lpath.o Max_MST.o Bipartite.o Test_ArtiPoint.o Bridges.o Prims.o KruskalMST.o myalgo_MST.o -o graph
 	
 main.o: main.cpp
 	g++ -c main.cpp
@@ -24,12 +24,6 @@ BFS2.o: BFS2.cpp
 BFS3.o: BFS3.cpp
 	g++ -c BFS3.cpp
 
-Spath.o: SPath.cpp	
-	g++ -c Spath.cpp
-
-Lpath.o: Lpath.cpp
-	g++ -c Lpath.cpp
-
 Max_MST.o: Max_MST.cpp
 	g++ -c Max_MST.cpp
 
@@ -45,8 +39,8 @@ Bridges.o: Bridges.cpp
 Prims.o: Prims.cpp
 	g++ -c Prims.cpp
 
-MST_Kruskal.o: MST_Kruskal.cpp
-	g++ -c MST_Kruskal.cpp
+KruskalMST.o: KruskalMST.cpp
+	g++ -c KruskalMST.cpp
 
 myalgo_MST.o: myalgo_MST.cpp
 	g++ -c myalgo_MST.cpp

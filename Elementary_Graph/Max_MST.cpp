@@ -62,20 +62,3 @@ Graph MAX_Weight_MST(Graph G)       // Returns MST as an object of Class Graph
 
   	return K;
 }
-
-
-set<int> findSet(Graph G,int u)      // utility to get set of vertices reachable from vertex u
-{
-	clearGlobalList();
-  	clearGlobalVisit(G.n);
-
-  	set<int> s;
-  	list<int> l = DFS(G,u);
-
-  	for(auto l1 : l)
-  	{
-		s.insert(l1);
-    }
-
-  	return s;
-}
