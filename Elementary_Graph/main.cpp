@@ -33,6 +33,11 @@ int main()
     int u,v,w;
     list<int> D;
     bool flag;
+
+    Graph Prims;
+    Graph Kruskals;
+    Graph MyAlgo;
+
     do
     {
         cout<<"---------------MENU----------------"<<endl;
@@ -181,15 +186,17 @@ int main()
                 switch (choice)
                 {
                     case 1:
-                    Graph Prim = MST_Prim(G1);
-                    Prim.print();
+                    Prims = MST_Prim(G1);
+                    Prims.print();
                     break;
+
                     case 2:
-                    Graph Kruskal = MST_Kruskal(G1);
-                    Kruskal.print();
+                    Kruskals = MST_Kruskal(G1);
+                    Kruskals.print();
                     break;
+
                     case 3:
-                    Graph MyAlgo = MST_youralgo(G1);
+                    MyAlgo = MST_youralgo(G1);
                     MyAlgo.print();
                     break;
                 }
