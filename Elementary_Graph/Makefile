@@ -24,6 +24,12 @@ BFS2.o: BFS2.cpp
 BFS3.o: BFS3.cpp
 	g++ -c BFS3.cpp
 
+Spath.o: Spath.cpp
+	g++ -c Spath.cpp
+
+Lpath.o: Lpath.cpp
+	g++ -c Lpath.cpp	
+
 Max_MST.o: Max_MST.cpp
 	g++ -c Max_MST.cpp
 
