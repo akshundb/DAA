@@ -143,33 +143,61 @@ int main()
                 cin>>choice;
                 switch (choice)
                 {
- 
-                case 1:
-                D=BFS(G1);
-                printTree(D,0);
-                break;
-
-                case 2:
-                cout<<"Enter Starting Vertex :-";
-                cin>>u;
-                D=BFS(G1,u);
-                printTree(D,u);
-                break;
-
-                case 3:
-                cout<<"Enter Starting Vertex :-";
-                cin>>u;
-                cout<<"Enter Ending Vertex :-";
-                cin>>v;
-                flag=BFS(G1,u,v);
-                if(flag)
-                cout<<"Reachable"<<endl;
-                else
-                cout<<"Not Reachable"<<endl;
-                break;
+                    //SPATH AND LPATH NEED TO BE FIXED
                 }
             break;
 
+            case 7:
+                cout<<"-------------MODULE 4-----------------";
+                cout<<"1.Test_Bipartite(Graph G)"<<endl;
+                cout<<"2.Test_ArticulationPoints(Graph G)"<<endl;
+                cout<<"3.Test_Bridges(Graph G)"<<endl;
+                cout<<"Enter choice:-";
+                cin>>choice;
+                switch (choice)
+                {
+                    case 1:
+                    if(TEST_bipartite(G1))
+                    cout<<"Graph IS Bipartite"<<endl;
+                    else
+                    cout<<"Graph IS NOT Bipartite"<<endl;
+                    break;
+                    case 2:
+                        Test_articulationpoints(G1);
+                    break;
+                    case 3:
+                        Test_bridges(G1);
+                    break;
+                }
+            break;
+
+            case 8 :
+                cout<<"-------------MODULE 5-----------------";
+                cout<<"1.MST_Prim(Graph G)"<<endl;
+                cout<<"2.MST_Kruskal(Graph G)"<<endl;
+                cout<<"3.MST_YourAlgo(Graph G)"<<endl;
+                cout<<"Enter choice:-";
+                cin>>choice;
+                switch (choice)
+                {
+                    case 1:
+                    Graph Prim = MST_Prim(G1);
+                    Prim.print();
+                    break;
+                    case 2:
+                    Graph Kruskal = MST_Kruskal(G1);
+                    Kruskal.print();
+                    break;
+                    case 3:
+                    Graph MyAlgo = MST_youralgo(G1);
+                    MyAlgo.print();
+                    break;
+                }
+            break;
+
+            case 9:
+                cout<<"EXITED"<<endl;
+            break;  
             default:
             cout<<"INVALID CHOICE"<<endl;
         }

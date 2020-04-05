@@ -4,7 +4,6 @@
 using namespace std;
 #define NIL -1 
 
-
 void APTransverse(int u, bool visited[], int disc[],int low[], int parent[], bool ap[],Graph G) 
 { 
     

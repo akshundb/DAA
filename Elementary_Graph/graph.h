@@ -68,6 +68,7 @@ class Graph
 
 	void print()
 	{
+		cout<<"---------------------Graph Adj List-------------------"<<endl;
 		for(int i=0; i<n; i++)
 		{
 			cout<<i<<"-->";
@@ -97,7 +98,7 @@ void LPATH(Graph G, int flag);
 
 Graph MAX_Weight_MST(Graph G);
 
-void TEST_bipartite(Graph G);
+bool TEST_bipartite(Graph G);
 void Test_articulationpoints(Graph G);
 void Test_bridges(Graph G);
 

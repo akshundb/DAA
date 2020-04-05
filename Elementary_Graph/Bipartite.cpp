@@ -4,7 +4,7 @@
 
 using namespace std;
 
-bool bipartite(Graph G, int s){
+bool TEST_bipartite(Graph G, int s){
     int color[G.n];
     for (int i = 0; i < G.n; ++i)
         color[i] = -1;
