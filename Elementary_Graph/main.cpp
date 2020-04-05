@@ -34,10 +34,12 @@ int main()
     list<int> D;
     bool flag;
 
+    vector<int> p;
+
     Graph Prims;
     Graph Kruskals;
     Graph MyAlgo;
-
+    Graph MaxT;
     do
     {
         cout<<"---------------MENU----------------"<<endl;
@@ -46,6 +48,7 @@ int main()
         cout<<"7.Module 4"<<endl<<"8.Module 5"<<endl<<"9.Exit"<<endl;
         cout<<"Enter choice:-";
         cin>>choice;
+        cout<<endl;
         switch(choice)
         {
             case 1:
@@ -148,7 +151,36 @@ int main()
                 cin>>choice;
                 switch (choice)
                 {
-                    
+                    case 1:
+                        cout<<"Enter Starting Vertex :-";
+                        cin>>u;
+                        cout<<"Is the Graph Unweighted(0)/Weighted(1)";
+                        cin>>v;
+                        if(v==1)
+                        flag=true;
+                        else
+                        flag=false;                       
+                        p=BFS_SPATH(G1,u,flag);
+                        int shor=min_element(p.begin(), p.end()) - p.begin();
+                        cout<<"Shortest Path from "<<u<<"is to "<<shor <<"with a distance of " <<p[shor]<<endl; 
+                    break;
+
+                    case 2:
+                        cout<<"Is the Tree Unweighted(0)/Weighted(1)";
+                        cin>>v;
+                        if(v==1)
+                        flag=true;
+                        else
+                        flag=false; 
+                        p=LPATH(G1,flag);
+                        cout<<"Longest Path in the Tree is from Node "<<p[0]<<" To Node "<<p[1]<<endl;
+                    break;
+
+                    case 3:
+                    cout<<"Max Spanning Tree"<<endl;
+                    MaxT=MAX_Weight_MST(G1);
+                    MaxT.print();
+                    break;
                 }
             break;
 

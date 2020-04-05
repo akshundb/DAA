@@ -95,7 +95,7 @@ list<int> BFS(Graph G);
 
 vector<int> BFS_SPATH(Graph G, int s, bool flag);
 
-void LPATH(Graph G, int flag);
+vector<int> LPATH(Graph G, int flag);
 
 Graph MAX_Weight_MST(Graph G);
 

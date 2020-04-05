@@ -84,5 +84,5 @@ void Test_articulationpoints(Graph G)
     for (int i = 0; i < G.n; i++) 
         if (ap[i] == true) 
             cout << i << " "; 
-
+    cout<<endl;
 }
