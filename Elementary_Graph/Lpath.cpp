@@ -5,7 +5,7 @@
 #include <algorithm>
 
 
-vector<int> Lpath (Graph G, bool flag)
+vector<int> LPATH (Graph G, bool flag)
 {
   	vector<int> longestPath;
 
@@ -16,7 +16,7 @@ vector<int> Lpath (Graph G, bool flag)
   	v = BFS_SPATH(G,0,flag);
 	far1 = max_element(v.begin(), v.end()) - v.begin(); // farthest element from 0
 
-  	v = BFS_SPATH(G,far1,flag); 
+  	v = BFS_SPATH(G,far1,flag);
   	far2 = max_element(v.begin(), v.end()) - v.begin(); // farthest element from far1
 
   	longestPath.push_back(far1);

@@ -5,7 +5,7 @@
 using namespace std;
 
 void printTree(list<int> l,int s)
-{   
+{
     cout<<"Vertices Visted From<"<<s<<":-"<<endl;
     list<int> :: iterator i;
     for(i=l.begin();i!=l.end();i++)
@@ -30,7 +30,7 @@ int main()
 		G1.N[i] = NULL;
 	}
 
-    int u,v,w;
+    int u,v,w,shor;
     list<int> D;
     bool flag;
 
@@ -71,7 +71,8 @@ int main()
             G1.print();
             break;
             case 4:
-                cout<<"-------------MODULE 1-----------------";
+                cout<<"-------------MODULE 1-----------------"<<endl;
+
                 cout<<"1.DFS(Graph G)"<<endl;
                 cout<<"2.DFS(Graph G,vertex s)"<<endl;
                 cout<<"3.DFS(Graph G,vertex s,vertex t)"<<endl;
@@ -82,6 +83,7 @@ int main()
 
                 case 1:
                 D=DFS(G1);
+                D.unique();
                 printTree(D,0);
                 break;
 
@@ -89,6 +91,7 @@ int main()
                 cout<<"Enter Starting Vertex :-";
                 cin>>u;
                 D=DFS(G1,u);
+                D.unique();
                 printTree(D,u);
                 break;
 
@@ -107,7 +110,7 @@ int main()
             break;
 
             case 5:
-                cout<<"-------------MODULE 2-----------------";
+                cout<<"-------------MODULE 2-----------------"<<endl;
                 cout<<"1.BFS(Graph G)"<<endl;
                 cout<<"2.BFS(Graph G,vertex s)"<<endl;
                 cout<<"3.BFS(Graph G,vertex s,vertex t)"<<endl;
@@ -118,6 +121,7 @@ int main()
 
                 case 1:
                 D=BFS(G1);
+                D.unique();
                 printTree(D,0);
                 break;
 
@@ -125,6 +129,7 @@ int main()
                 cout<<"Enter Starting Vertex :-";
                 cin>>u;
                 D=BFS(G1,u);
+                D.unique();
                 printTree(D,u);
                 break;
 
@@ -143,7 +148,7 @@ int main()
             break;
 
             case 6:
-                cout<<"-------------MODULE 3-----------------";
+                cout<<"-------------MODULE 3-----------------"<<endl;
                 cout<<"1.BFS_SPATH(Graph G)"<<endl;
                 cout<<"2.LPATH(Tree T)"<<endl;
                 cout<<"3.MAX_Weight_MST(Graph G)"<<endl;
@@ -159,10 +164,10 @@ int main()
                         if(v==1)
                         flag=true;
                         else
-                        flag=false;                       
+                        flag=false;
                         p=BFS_SPATH(G1,u,flag);
-                        int shor=min_element(p.begin(), p.end()) - p.begin();
-                        cout<<"Shortest Path from "<<u<<"is to "<<shor <<"with a distance of " <<p[shor]<<endl; 
+                        shor=min_element(p.begin(), p.end()) - p.begin();
+                        cout<<"Shortest Path from "<<u<<"is to "<<shor <<"with a distance of " <<p[shor]<<endl;
                     break;
 
                     case 2:
@@ -171,7 +176,7 @@ int main()
                         if(v==1)
                         flag=true;
                         else
-                        flag=false; 
+                        flag=false;
                         p=LPATH(G1,flag);
                         cout<<"Longest Path in the Tree is from Node "<<p[0]<<" To Node "<<p[1]<<endl;
                     break;
@@ -185,7 +190,7 @@ int main()
             break;
 
             case 7:
-                cout<<"-------------MODULE 4-----------------";
+                cout<<"-------------MODULE 4-----------------"<<endl;
                 cout<<"1.Test_Bipartite(Graph G)"<<endl;
                 cout<<"2.Test_ArticulationPoints(Graph G)"<<endl;
                 cout<<"3.Test_Bridges(Graph G)"<<endl;
@@ -209,7 +214,7 @@ int main()
             break;
 
             case 8 :
-                cout<<"-------------MODULE 5-----------------";
+                cout<<"-------------MODULE 5-----------------"<<endl;
                 cout<<"1.MST_Prim(Graph G)"<<endl;
                 cout<<"2.MST_Kruskal(Graph G)"<<endl;
                 cout<<"3.MST_YourAlgo(Graph G)"<<endl;
@@ -236,7 +241,7 @@ int main()
 
             case 9:
                 cout<<"EXITED"<<endl;
-            break;  
+            break;
             default:
             cout<<"INVALID CHOICE"<<endl;
         }

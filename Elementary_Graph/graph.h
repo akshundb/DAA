@@ -32,7 +32,7 @@ class Graph
 
 	void insertEdge(int n1, int n2, int w)
 	{
-		
+
 		N[n1];
 		struct node *myinsert=(struct node*)malloc(sizeof(struct node));
 		myinsert->next = NULL;
@@ -95,7 +95,7 @@ list<int> BFS(Graph G);
 
 vector<int> BFS_SPATH(Graph G, int s, bool flag);
 
-vector<int> LPATH(Graph G, int flag);
+vector<int> LPATH(Graph G, bool flag);
 
 Graph MAX_Weight_MST(Graph G);
 
