@@ -14,9 +14,9 @@ vector<int> BFS_SPATH(Graph G, int s, bool flag)
 
 	for(int i = 0; i<G.n; i++)
 	{
-        visit[i] = false;
+    	visit[i] = false;
         d.push_back(0);
-  	}
+	}
 
   	visit[s] = true;
 
