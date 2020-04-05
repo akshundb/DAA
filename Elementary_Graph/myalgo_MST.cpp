@@ -32,12 +32,11 @@ Graph MST_youralgo(Graph G)
                 		//w = list for edge weight
 
 	//MAKE-SET (Start)-----------------Get edges weights in vectors for sorting
-  	struct node *temp;
-  	for(int i=0; i<G.n; i++)
+	struct node *temp;
+	for(int i=0; i<G.n; i++)
   	{
       	temp = G.N[i];
-
-      	while(temp!=NULL)
+		while(temp!=NULL)
       	{
         	u.push_back(i);
         	v.push_back(temp->data);
