@@ -7,8 +7,6 @@ struct node
 {
 	int data;
 	int weight;
-	int degree;
-
 	struct node *next;
 };
 
@@ -33,20 +31,52 @@ class Graph
 
 	void insertEdge(int n1, int n2, int w)
 	{
-		N[n1] = myinsert(n2, N[n1], w);
+		
+		N[n1];
+		struct node *myinsert=(struct node*)malloc(sizeof(struct node));
+		myinsert->next = NULL;
+		myinsert->data = n2;
+		myinsert->weight = w;
+		if(N[n1]!=NULL)
+		{
+		myinsert->next = N[n1]->next;
+		N[n1]->next = myinsert;
+		}
+		else
+		{
+		N[n1]=myinsert;
+		}
 	}
 
 	void deleteEdge(int n1,int n2)
 	{
-		myDelete(n2,N[n1]);
+		struct node* temp = N[n1];
+		struct node* prev;
+		if(N[n1]->data == n2)
+			N[n1] = N[n1]->next;
+		else{
+			while(temp){
+				if(temp->data == n2){
+					prev->next = temp->next;
+				break;
+			}
+				prev = temp;
+				temp = temp->next;
+			}
+		}
 	}
 
 	void print()
 	{
 		for(int i=0; i<n; i++)
 		{
-			cout<<i<<" ";
-			printList(N[i]);
+			cout<<i<<"-->";
+			struct node *temp = N[i];
+			while(temp!=NULL)
+			{
+			cout << temp->data << ", ";
+			temp = temp->next;
+			}
 			cout<<endl;
 		}
 	}
@@ -65,7 +95,7 @@ vector<int> BFS_SPATH(Graph G, int s, bool flag);
 
 void LPATH(Graph G, int flag);
 
-void MAX_Weight_MST(Graph G);
+Graph MAX_Weight_MST(Graph G);
 
 void TEST_bipartite(Graph G);
 void Test_articulationpoints(Graph G);
