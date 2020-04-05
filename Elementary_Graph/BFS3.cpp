@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 bool BFS(Graph G, int s, int t)
 {
     queue<int> Q;
@@ -15,7 +14,6 @@ bool BFS(Graph G, int s, int t)
     Q.push(s);
     while(!Q.empty())
     {
-
         int x = Q.front();
         Q.pop();
         struct node* temp = G.N[x];
@@ -29,8 +27,8 @@ bool BFS(Graph G, int s, int t)
                      return true;
                 visit[i] = true;
                 Q.push(i);
-                temp = temp->next;
             }
+            temp = temp->next;
         }
     }
     return false;
